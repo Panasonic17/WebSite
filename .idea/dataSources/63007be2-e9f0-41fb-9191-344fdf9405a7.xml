@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - @localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="beersiker">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="daybook"/>
+    <schema id="3" name="hibernate"/>
+    <schema id="4" name="hibtest"/>
+    <schema id="5" name="information_schema"/>
+    <schema id="6" name="jspregnew"/>
+    <schema id="7" name="mysql"/>
+    <schema id="8" name="new_schema"/>
+    <schema id="9" name="performance_schema"/>
+    <schema id="10" name="sakila"/>
+    <schema id="11" name="salesdept"/>
+    <schema id="12" name="servredb"/>
+    <schema id="13" name="softserv"/>
+    <schema id="14" name="students"/>
+    <schema id="15" name="test"/>
+    <schema id="16" name="jspregremake"/>
+    <table id="17" parent="1" name="beer"/>
+    <table id="18" parent="1" name="points_of_sale"/>
+    <table id="19" parent="1" name="score"/>
+    <column id="20" parent="17" name="idBear">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="21" parent="17" name="name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="22" parent="17" name="developer">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="23" parent="17" name="GrydjanValue">
+      <data-type>decimal(10)|0</data-type>
+    </column>
+    <column id="24" parent="17" name="img">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="25" parent="17" name="stars">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="26" parent="17" name="PRIMARY">
+      <columns>idBear</columns>
+      <primary>1</primary>
+    </key>
+    <column id="27" parent="18" name="idPoints_of_Sale">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="28" parent="18" name="name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="29" parent="18" name="add_information">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="30" parent="18" name="address">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="31" parent="18" name="Xposition">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="32" parent="18" name="Yposition">
+      <data-type>double|0</data-type>
+    </column>
+    <key id="33" parent="18" name="PRIMARY">
+      <columns>idPoints_of_Sale</columns>
+      <primary>1</primary>
+    </key>
+    <column id="34" parent="19" name="idscore">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="35" parent="19" name="idBear">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="36" parent="19" name="idPoints_of_Sale">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="37" parent="19" name="value">
+      <data-type>double|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <index id="38" parent="19" name="idBearq_idx">
+      <columns>idBear</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="39" parent="19" name="idPoints_of_Sale_idx">
+      <columns>idPoints_of_Sale</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="40" parent="19" name="PRIMARY">
+      <columns>idscore</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="41" parent="19" name="idBear">
+      <columns>idBear</columns>
+      <ref-key>~.beer.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="42" parent="19" name="idPoints_of_Sale">
+      <columns>idPoints_of_Sale</columns>
+      <ref-key>~.points_of_sale.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+  </database-model>
+</dataSource>
