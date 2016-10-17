@@ -1,13 +1,20 @@
+import DAO.ProductDAO;
 import DAO.UserDAO;
+import Ennty.Product;
 import Ennty.User;
+
+import java.util.List;
 
 /**
  * Created by Саша on 08.10.2016.
  */
 public class TestMainHib {
     public static void main(String[] args) {
-        User u=new User("newTest","123");
-        UserDAO.addUser(u);
+        List<Product> products=ProductDAO.getAllProducts();
+        for(Product p:products)
+        {
+            System.out.println(p);
+        }
     }
 
 }

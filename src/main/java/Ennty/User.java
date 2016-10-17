@@ -19,6 +19,14 @@ public class User {
 
 
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
+    }
+
     public User() {
     }
 
@@ -45,5 +53,10 @@ public class User {
         this.password = lastName;
     }
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "login='" + login + '\'' +
+                '}';
+    }
 }

@@ -23,10 +23,13 @@ public class Registr extends HttpServlet {
         HttpSession session = req.getSession();
         String login = req.getParameter("login");
         String passvord =  req.getParameter("passvord");
+        if(UserDAO.getUserByLogin(login)==null){
         User u=new User(login,passvord);
-        UserDAO.addUser(u);
-        session.setAttribute("user",u);
-        RequestDispatcher rd=request.getRequestDispatcher("MyCabinet.jsp");
+            UserDAO.addUser(u);
+        }
+        //UserDAO.addUser(u);
+       // session.setAttribute("user",u);
+        RequestDispatcher rd=request.getRequestDispatcher("Shablon.jsp");
         rd.include(request, response);
     }
 

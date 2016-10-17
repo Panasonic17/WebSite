@@ -11,7 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<%@ include file="Header.jsp"%>
 <form  method="post" action="registr" >
     Login<br>
     <input type="text" name="login"><br>
