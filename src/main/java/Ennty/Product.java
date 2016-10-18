@@ -1,6 +1,8 @@
 package Ennty;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Саша on 16.10.2016.
@@ -21,6 +23,9 @@ public class Product {
 
     @Column(name = "value")
     private Double value;
+
+    @ManyToMany(mappedBy="products")
+    private Set<User> employees = new HashSet<User>();
 
     public Product(String description, String type, Double value) {
         this.description = description;

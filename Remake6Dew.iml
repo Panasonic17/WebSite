@@ -52,5 +52,6 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.0.5" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.extras:glassfish-embedded-all:3.2-b06" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:jquery:2.1.4" level="project" />
   </component>
 </module>

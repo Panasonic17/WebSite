@@ -16,5 +16,6 @@
         <!-- Mapping with model class containing annotations -->
         <mapping class="Ennty.User"/>
         <mapping class="Ennty.Product"/>
+        <mapping class="Ennty.UserProducts"/>
     </session-factory>
 </hibernate-configuration>

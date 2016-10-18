@@ -10,11 +10,7 @@ import java.util.List;
  */
 public class TestMainHib {
     public static void main(String[] args) {
-        List<Product> products=ProductDAO.getAllProducts();
-        for(Product p:products)
-        {
-            System.out.println(p);
-        }
+
     }
 
 }

@@ -2,6 +2,8 @@ package Ennty; /**
  * Created by Саша on 08.10.2016.
  */
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name = "user")
 public class User {
@@ -16,6 +18,12 @@ public class User {
 
     @Column(name = "password")
     private String password;
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name="userproducts",
+            joinColumns={@JoinColumn(name="user_id")},
+            inverseJoinColumns={@JoinColumn(name="product_id")})
+    private Set<Product> products = new HashSet<Product>();
 
 
 

@@ -12,17 +12,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>3 Column Layout</title>
     <link rel='stylesheet' href='Css/allcss.css' type='text/css' media='all' />
     <script>
         function test(a) {
-            alert(a);
+            $.post( "addProduct",{id: a} );
         }
     </script>
-
 </head>
-
 <body>
 
 <header id="header"><p>
@@ -32,7 +31,6 @@
     <main id="center" class="column">
         <%
             List<Product> products= ProductDAO.getAllProducts();
-            List<Integer> idProducts=new LinkedList<Integer>();
         %>
         <TABLE cellpadding="15" border="1" style="background-color: #ffffcc;">
             <%
@@ -46,7 +44,7 @@
             </TR>
             <% } %>
         </TABLE>
-        <input type="button" value="Оформити замовлення" onclick="">
+        <button>оформити замовлення</button>
     </main>
     <%@ include file="LeftColumn.jsp"%>
     <div id="right" class="column">
