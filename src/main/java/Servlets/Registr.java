@@ -29,7 +29,7 @@ public class Registr extends HttpServlet {
         }
         //UserDAO.addUser(u);
        // session.setAttribute("user",u);
-        RequestDispatcher rd=request.getRequestDispatcher("Shablon.jsp");
+       RequestDispatcher rd=request.getRequestDispatcher("Shablon.jsp");
         rd.include(request, response);
     }
 

@@ -20,6 +20,11 @@
         function test(a) {
             $.post( "addProduct",{id: a} );
         }
+        $(document).ready(function(){
+            $(".forJQuery").click(function(){
+               $(this).text("додано")
+            });
+        });
     </script>
 </head>
 <body>
@@ -27,6 +32,9 @@
 <header id="header"><p>
     <%@ include file="Header.jsp"%>
 </p></header>
+<p>
+    make return from ajaks and if no user redirect into Shablon jsp
+</p>
 <div id="container">
     <main id="center" class="column">
         <%
@@ -40,7 +48,7 @@
                 <TD><%=p.getType()%></TD>
                 <TD><%=p.getDescription()%></TD>
                 <TD><%=p.getValue()%></TD>
-                <TD> <p><input type="button" value="Додати" onclick=test(<%=p.getId()%>)></p></TD>
+                <TD> <p class="forJQuery"><input type="button" value="Додати" onclick=test(<%=p.getId()%>)></p></TD>
             </TR>
             <% } %>
         </TABLE>

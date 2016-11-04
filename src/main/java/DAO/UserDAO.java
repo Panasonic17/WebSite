@@ -1,6 +1,7 @@
 package DAO;
 
 
+import Ennty.Product;
 import Ennty.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -30,6 +31,19 @@ public class UserDAO {
             return c.get(0);
         }
         return null;
+    }
+    public static void addProductToUser(String login,Product p)
+    {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        User u= UserDAO.getUserByLogin(login);
+        System.out.println(u);
+
+        System.out.println(p);
+        u.getProducts().add(p);
+        session.saveOrUpdate(u);
+        session.getTransaction().commit();
+        session.close();
     }
 }
 /*
